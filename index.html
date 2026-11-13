@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Download Center</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+        body { background: #f5f7fa; padding: 40px 16px; text-align: center; }
+        .box { max-width: 540px; margin: 0 auto; background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+        h1 { font-size: 22px; color: #222; margin-bottom: 12px; }
+        .tip { color: #666; margin-bottom: 24px; font-size: 14px; line-height: 1.6; }
+        .group { margin-bottom: 22px; text-align: left; }
+        .group-title { font-size: 15px; font-weight: 600; color: #333; margin: 6px 0 4px; }
+        .group-desc { font-size: 13px; color: #888; margin-bottom: 8px; }
+        .btn { display: block; width: 100%; padding: 14px; margin: 10px 0; border: none; border-radius: 8px; background: #2563eb; color: #fff; font-size: 16px; cursor: pointer; text-decoration: none; }
+        .btn.secondary { background: #475569; }
+        .btn:hover { background: #1d4ed8; }
+        .btn.secondary:hover { background: #334155; }
+        .meta { margin-top: 18px; font-size: 13px; color: #999; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Software Download Center</h1>
+        <div class="tip">Overseas download channel. Packages here match the DingTalk Drive version. China users please use the DingTalk Drive link.</div>
+
+        <!--
+            固定下载链接（releases/latest 永久不变）
+            规则：每次发版上传的 Release 附件文件名，必须与下方 /download/ 后面的名称完全一致（大小写敏感）。
+            固定附件名：
+              ACC_setup.exe        <- ACC 切割中心控制器最新版
+              kimo-enterprise.rar  <- Kimo 企业版最新版
+              kimo-fonts.rar       <- Kimo 字体安装包（可选配套）
+            如更换文件名，网页链接与 Release 附件名必须同时改。
+        -->
+
+        <div class="group">
+            <div class="group-title">ACC Cutting Center Controller</div>
+            <div class="group-desc">Cutting center control software (latest release).</div>
+            <a class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/ACC_setup.exe" target="_blank" rel="noopener">Download ACC Setup</a>
+        </div>
+
+        <div class="group">
+            <div class="group-title">Kimo Enterprise</div>
+            <div class="group-desc">Kimo enterprise edition (latest release).</div>
+            <a class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/kimo-enterprise.rar" target="_blank" rel="noopener">Download Kimo Enterprise</a>
+            <a class="btn secondary" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/kimo-fonts.rar" target="_blank" rel="noopener">Download Kimo Font Pack (Optional)</a>
+        </div>
+
+        <div class="meta">Version: latest release</div>
+    </div>
+</body>
+</html>
