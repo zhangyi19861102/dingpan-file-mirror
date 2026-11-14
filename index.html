@@ -10,16 +10,24 @@
         .box { max-width: 540px; margin: 0 auto; background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
         h1 { font-size: 22px; color: #222; margin-bottom: 12px; }
         .tip { color: #666; margin-bottom: 24px; font-size: 14px; line-height: 1.6; }
-        .group { margin-bottom: 22px; text-align: left; }
+        .group { margin-bottom: 22px; text-align: left; padding: 12px 14px; border-left: 3px solid transparent; border-radius: 8px; transition: background .15s, border-color .15s; }
         .group-title { font-size: 15px; font-weight: 600; color: #333; margin: 6px 0 4px; }
         .group-desc { font-size: 13px; color: #888; margin-bottom: 8px; }
         .btn { display: block; width: 100%; padding: 14px; margin: 10px 0; border: none; border-radius: 8px; background: #2563eb; color: #fff; font-size: 16px; cursor: pointer; text-decoration: none; }
         .btn.secondary { background: #475569; }
         .btn:hover { background: #1d4ed8; }
         .btn.secondary:hover { background: #334155; }
-        .ver { margin-top: 6px; font-size: 12px; color: #94a3b8; word-break: break-all; }
+        .ver { display: inline-block; margin-top: 8px; font-size: 12.5px; color: #2563eb; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; word-break: break-all; text-decoration: underline; text-underline-offset: 3px; }
+        .ver:hover { color: #1d4ed8; }
+        .ver::before { content: "\2193 "; font-weight: 700; text-decoration: none; }
+        .ver[aria-disabled="true"] { color: #9aa4b2; text-decoration: none; }
         .meta { margin-top: 18px; font-size: 13px; color: #999; }
         .warn { color: #b45309; }
+        /* 选中态：从发布页带锚点进入时自动定位并高亮对应文件 */
+        .group.sel { background: #eaf3ff; border-left-color: #2563eb; }
+        .group.sel .group-title::after { content: "  \2713 Selected"; color: #2563eb; font-size: 12px; font-weight: 600; }
+        .tipbar { display: none; margin: 0 0 22px; padding: 11px 14px; background: #eaf3ff; border: 1px solid #bfdbfe; border-radius: 8px; font-size: 13px; line-height: 1.5; color: #1e40af; text-align: left; }
+        .tipbar.on { display: block; }
     </style>
 </head>
 <body>
@@ -35,22 +43,34 @@
             匹配时取「版本号最大」的附件，而不是数组里第一个匹配的 ——
             同一个 Release 里可能同时留着旧版和新版，取第一个会下到旧包。
             下方 href 为 API 不可用时的兜底链接（打开 Release 页面）。
+
+            锚点定位（2026-11-14 新增）：
+            URL 带 #acc / #kimo / #fonts 时，自动高亮并滚动定位到对应条目，
+            条目下方文件名本身就是直链，点击文件名即可直接下载对应文件。
+            发布页的「海外通道」按主包 #kimo、字体包 #fonts 分别跳转。
         -->
 
-        <div class="group">
+        <div class="tipbar" id="tipbar"></div>
+
+        <div class="group" id="g-acc" data-key="acc">
             <div class="group-title">ACC Cutting Center Controller</div>
             <div class="group-desc">Cutting center control software (latest release).</div>
             <a id="btn-acc" class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener">Download ACC Setup</a>
-            <div id="ver-acc" class="ver"></div>
+            <a id="ver-acc" class="ver" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener" aria-disabled="true">loading latest file…</a>
         </div>
 
-        <div class="group">
+        <div class="group" id="g-kimo" data-key="kimo">
             <div class="group-title">Kimo Enterprise</div>
             <div class="group-desc">Kimo enterprise edition (latest release).</div>
             <a id="btn-kimo" class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener">Download Kimo Enterprise</a>
-            <div id="ver-kimo" class="ver"></div>
-            <a id="btn-fonts" class="btn secondary" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener">Download Kimo Font Pack (Optional)</a>
-            <div id="ver-fonts" class="ver"></div>
+            <a id="ver-kimo" class="ver" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener" aria-disabled="true">loading latest file…</a>
+        </div>
+
+        <div class="group" id="g-fonts" data-key="fonts">
+            <div class="group-title">Kimo Font Pack (Optional)</div>
+            <div class="group-desc">Font installer for Kimo. Install the fonts before the main program.</div>
+            <a id="btn-fonts" class="btn secondary" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener">Download Kimo Font Pack</a>
+            <a id="ver-fonts" class="ver" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener" aria-disabled="true">loading latest file…</a>
         </div>
 
         <div class="meta">Latest release: <span id="rel-tag">latest</span></div>
@@ -58,13 +78,31 @@
 
     <script>
         var API = 'https://api.github.com/repos/zhangyi19861102/dingpan-file-mirror/releases/latest';
+        var FALLBACK = 'https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest';
+
+        /* 锚点 → 条目说明，用于顶部提示条 */
+        var LABEL = {
+            acc:   'ACC Cutting Center Controller',
+            kimo:  'Kimo Enterprise (main program)',
+            fonts: 'Kimo Font Pack (optional)'
+        };
 
         function bindAsset(btnId, verId, asset) {
-            if (!asset) return;
             var btn = document.getElementById(btnId);
             var ver = document.getElementById(verId);
-            if (btn) btn.href = asset.browser_download_url;
-            if (ver) ver.textContent = asset.name;
+            if (btn && asset) btn.href = asset.browser_download_url;
+            if (ver) {
+                if (asset) {
+                    ver.textContent = asset.name;
+                    ver.href = asset.browser_download_url;
+                    ver.setAttribute('aria-disabled', 'false');
+                    ver.title = 'Click to download ' + asset.name;
+                } else {
+                    ver.textContent = 'open release page to download';
+                    ver.href = FALLBACK;
+                    ver.setAttribute('aria-disabled', 'true');
+                }
+            }
         }
 
         /* 从文件名解析版本号，用于挑「最新的那个附件」。
@@ -73,7 +111,7 @@
             var m = name.match(/(\d+(?:\.\d+)*)/);
             var nums = m ? m[1].split('.').map(function (x) { return parseInt(x, 10) || 0; }) : [0];
             var b = name.match(/[Bb]eta(\d+)/);
-            var beta = b ? parseInt(b[1], 10) : 0;
+            var beta = b ? parseInt(b.group(1), 10) : 0;
             if (b && nums.length && nums[nums.length - 1] === beta) nums.pop();
             return { v: nums, b: beta };
         }
@@ -91,6 +129,29 @@
             }).pop();
         }
 
+        /* 锚点定位：命中 #acc / #kimo / #fonts 时高亮并滚动到对应条目 */
+        function currentKey() {
+            var h = (location.hash || '').replace(/^#/, '').toLowerCase();
+            return LABEL[h] ? h : '';
+        }
+
+        function applySelection() {
+            var key = currentKey();
+            var groups = document.querySelectorAll('.group');
+            for (var i = 0; i < groups.length; i++) groups[i].classList.remove('sel');
+            var bar = document.getElementById('tipbar');
+            if (!key) { bar.className = 'tipbar'; bar.textContent = ''; return; }
+            var el = document.getElementById('g-' + key);
+            if (!el) { bar.className = 'tipbar'; bar.textContent = ''; return; }
+            el.classList.add('sel');
+            bar.textContent = '已定位到所选文件 / Selected: ' + LABEL[key] +
+                              ' — 点击文件名直接下载 / click the filename to download';
+            bar.className = 'tipbar on';
+            try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+        }
+
+        window.addEventListener('hashchange', applySelection);
+
         fetch(API)
             .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
             .then(function (data) {
@@ -103,16 +164,23 @@
                 bindAsset('btn-fonts', 'ver-fonts', fonts);
                 var tag = document.getElementById('rel-tag');
                 if (tag) tag.textContent = data.tag_name || data.name || 'latest';
+                applySelection();
             })
             .catch(function () {
-                var page = 'https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest';
                 ['btn-acc', 'btn-kimo', 'btn-fonts'].forEach(function (id) {
                     var b = document.getElementById(id);
-                    if (b) b.href = page;
+                    if (b) b.href = FALLBACK;
+                });
+                ['ver-acc', 'ver-kimo', 'ver-fonts'].forEach(function (id) {
+                    var v = document.getElementById(id);
+                    if (v) { v.textContent = 'open release page to download'; v.href = FALLBACK; v.setAttribute('aria-disabled', 'true'); }
                 });
                 var tag = document.getElementById('rel-tag');
                 if (tag) { tag.textContent = 'latest (open release page)'; tag.className = 'warn'; }
+                applySelection();
             });
+
+        applySelection();
     </script>
 </body>
 </html>
