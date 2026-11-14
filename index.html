@@ -17,7 +17,9 @@
         .btn.secondary { background: #475569; }
         .btn:hover { background: #1d4ed8; }
         .btn.secondary:hover { background: #334155; }
+        .ver { margin-top: 6px; font-size: 12px; color: #94a3b8; word-break: break-all; }
         .meta { margin-top: 18px; font-size: 13px; color: #999; }
+        .warn { color: #b45309; }
     </style>
 </head>
 <body>
@@ -26,29 +28,60 @@
         <div class="tip">Overseas download channel. Packages here match the DingTalk Drive version. China users please use the DingTalk Drive link.</div>
 
         <!--
-            固定下载链接（releases/latest 永久不变）
-            规则：每次发版上传的 Release 附件文件名，必须与下方 /download/ 后面的名称完全一致（大小写敏感）。
-            固定附件名：
-              ACC_setup.exe        <- ACC 切割中心控制器最新版
-              kimo-enterprise.rar  <- Kimo 企业版最新版
-              kimo-fonts.rar       <- Kimo 字体安装包（可选配套）
-            如更换文件名，网页链接与 Release 附件名必须同时改。
+            下载说明：
+            按钮地址由页面脚本自动读取 GitHub 最新 Release（/releases/latest）后动态填充，
+            按文件名关键字匹配：ACC / kimo（主包）/ font（字体包）。
+            附件文件名可带真实版本号，客户下载到的文件名即为附件原名。
+            下方 href 为 API 不可用时的兜底固定名链接。
         -->
 
         <div class="group">
             <div class="group-title">ACC Cutting Center Controller</div>
             <div class="group-desc">Cutting center control software (latest release).</div>
-            <a class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/ACC_setup.exe" target="_blank" rel="noopener">Download ACC Setup</a>
+            <a id="btn-acc" class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/ACC_setup.exe" target="_blank" rel="noopener">Download ACC Setup</a>
+            <div id="ver-acc" class="ver"></div>
         </div>
 
         <div class="group">
             <div class="group-title">Kimo Enterprise</div>
             <div class="group-desc">Kimo enterprise edition (latest release).</div>
-            <a class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/kimo-enterprise.rar" target="_blank" rel="noopener">Download Kimo Enterprise</a>
-            <a class="btn secondary" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/kimo-fonts.rar" target="_blank" rel="noopener">Download Kimo Font Pack (Optional)</a>
+            <a id="btn-kimo" class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/kimo-enterprise.rar" target="_blank" rel="noopener">Download Kimo Enterprise</a>
+            <div id="ver-kimo" class="ver"></div>
+            <a id="btn-fonts" class="btn secondary" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest/download/kimo-fonts.rar" target="_blank" rel="noopener">Download Kimo Font Pack (Optional)</a>
+            <div id="ver-fonts" class="ver"></div>
         </div>
 
-        <div class="meta">Version: latest release</div>
+        <div class="meta">Latest release: <span id="rel-tag">latest</span></div>
     </div>
+
+    <script>
+        var API = 'https://api.github.com/repos/zhangyi19861102/dingpan-file-mirror/releases/latest';
+
+        function bindAsset(btnId, verId, asset) {
+            if (!asset) return;
+            var btn = document.getElementById(btnId);
+            var ver = document.getElementById(verId);
+            if (btn) btn.href = asset.browser_download_url;
+            if (ver) ver.textContent = asset.name;
+        }
+
+        fetch(API)
+            .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+            .then(function (data) {
+                var assets = data.assets || [];
+                var fonts = assets.find(function (x) { return /font|字体/i.test(x.name); });
+                var acc = assets.find(function (x) { return /acc/i.test(x.name); });
+                var kimo = assets.find(function (x) { return !/font|字体/i.test(x.name) && /kimo/i.test(x.name); });
+                bindAsset('btn-acc', 'ver-acc', acc);
+                bindAsset('btn-kimo', 'ver-kimo', kimo);
+                bindAsset('btn-fonts', 'ver-fonts', fonts);
+                var tag = document.getElementById('rel-tag');
+                if (tag) tag.textContent = data.tag_name || data.name || 'latest';
+            })
+            .catch(function () {
+                var tag = document.getElementById('rel-tag');
+                if (tag) { tag.textContent = 'latest (offline fallback)'; tag.className = 'warn'; }
+            });
+    </script>
 </body>
 </html>
