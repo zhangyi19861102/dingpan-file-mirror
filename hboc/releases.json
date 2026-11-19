@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "product": "hboc",
+  "generated_at": "2026-11-19 12:12:06",
+  "source": "《汉邦输出中心版本更新记录.xlsx》D/E/F 列",
+  "entry_url": "https://zhangyi19861102.github.io/dingpan-file-mirror/hboc/",
+  "mirror": {
+    "package": {
+      "label": "海外通道",
+      "url": "https://zhangyi19861102.github.io/hboc-file-mirror/#hboc",
+      "note": "海外通道：打开 GitHub 下载页并自动定位到对应文件，点击文件名即可下载；境外/网络受限时用，无需登录钉钉。",
+      "label_en": "Overseas Mirror",
+      "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Latest version only.",
+      "direct": false,
+      "fallback_url": "https://zhangyi19861102.github.io/hboc-file-mirror/#hboc",
+      "note_en_page": "Overseas mirror: opens the GitHub download page and jumps to the matching file, where you click the filename to download. No DingTalk sign-in needed."
+    }
+  },
+  "storage": {
+    "type": "dingtalk",
+    "kind": "dingtalk",
+    "configured": true,
+    "folder_node_id": "P7QG4Yx2Jpn0Xb4AupkXQAkYW9dEq3XD",
+    "folder_web": "https://alidocs.dingtalk.com/i/nodes/P7QG4Yx2Jpn0Xb4AupkXQAkYW9dEq3XD",
+    "folder_url": "dingtalk://dingtalkclient/page/yunpan?route=previewDentry&spaceId=797027777&fileId=243752609697&type=file",
+    "workspace_id": "797027777",
+    "source_path": "钉钉 → 工作台 / 钉盘 → 团队文件 → 全员文件夹 → 研发部 → 发布软件 → 汉邦输出中心 发布版本",
+    "note": "钉钉 → 工作台 / 钉盘 → 团队文件 → 全员文件夹 → 研发部 → 发布软件 → 汉邦输出中心 发布版本",
+    "record_name": "汉邦输出中心版本更新记录.xlsx",
+    "channel_rule": "以《汉邦输出中心版本更新记录》F 列『追踪记录』判定：含『已测试 / 已经测试 / 稳定版本』→ 正式版；其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。D 列为软件版本号，E 列为当前版本更新日志。",
+    "file_count": 2,
+    "package_count": 1,
+    "record_matched": 1,
+    "last_sync": "2026-11-19T12:12:03",
+    "note_en": "DingTalk → Workbench / Drive → Team Files → All Staff → R&D → Released Software → Han-Bond Output Center"
+  },
+  "attachment": null,
+  "releases": [
+    {
+      "id": "hboc-han-bondprintsystem_setup_1.0.0.1beta2",
+      "version": "Han-Bond Print System_setup_1.0.0.1Beta2",
+      "version_short": "1.0.0.1Beta2",
+      "version_raw": "Han-Bond Print System_setup_1.0.0.1Beta2.exe",
+      "date": "2026-11-19",
+      "channel": "beta",
+      "beta": true,
+      "status": "待测试",
+      "notes": [
+        "1）优化网口通讯；",
+        "2）新增断点续切功能；",
+        "3）新增超宽幅面分割功能；"
+      ],
+      "notes_en": [
+        "Optimized network port communication.",
+        "Added resumable cutting (breakpoint continuation) support.",
+        "Added extra-wide format splitting support."
+      ],
+      "origin": "dingtalk",
+      "matched_record": true,
+      "file": {
+        "name": "Han-Bond Print System_setup_1.0.0.1Beta2.exe",
+        "size": "64.9 MB",
+        "dl_url": "dingtalk://dingtalkclient/page/yunpan?route=previewDentry&spaceId=797027777&fileId=243752990511&type=file",
+        "web_url": "https://alidocs.dingtalk.com/i/nodes/P7QG4Yx2Jpn0Xb4AupkXRGyzW9dEq3XD",
+        "node_id": "P7QG4Yx2Jpn0Xb4AupkXRGyzW9dEq3XD",
+        "dentry_id": "243752990511",
+        "url_kind": "dingtalk",
+        "matched": true,
+        "missing": false
+      }
+    }
+  ]
+}
