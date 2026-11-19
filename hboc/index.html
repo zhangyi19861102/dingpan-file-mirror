@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>汉邦输出中心 版本发布 · 标准下载</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1c2026; --ink2:#5b6470; --ink3:#8b939e;
+  --line:#e3e7ec; --brand:#2563eb; --brand-soft:#eef4ff;
+  --stable:#0f766e; --stable-bg:#e7f5f2; --beta:#b45309; --beta-bg:#fdf3e3;
+  --attach:#7c3aed; --attach-bg:#f3edff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--brand);text-decoration:none}
+.wrap{max-width:960px;margin:0 auto;padding:28px 18px 56px}
+header.top{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:22px 24px;margin-bottom:16px}
+h1{margin:0;font-size:22px;font-weight:650;letter-spacing:.2px;text-align:center;grid-column:2;grid-row:1}
+.sub{color:var(--ink2);font-size:13px;margin:0}
+.path{margin-top:12px;padding:9px 12px;background:var(--bg);border-radius:8px;
+  color:var(--ink2);font-size:12px;word-break:break-all}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.stat{flex:1;min-width:120px;background:var(--bg);border:1px solid var(--line);
+  border-radius:10px;padding:10px 14px}
+.stat b{display:block;font-size:20px;font-weight:650;line-height:1.3}
+.stat span{color:var(--ink2);font-size:12px}
+.nav{display:flex;gap:10px;margin:0 0 16px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;padding:11px 14px;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;color:var(--ink2);font-weight:600;font-size:13px}
+.nav a:hover,.nav a.on{border-color:var(--brand);color:var(--brand);background:var(--brand-soft)}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 24px;margin-bottom:16px;scroll-margin-top:16px}
+.sec h2{margin:0 0 4px;font-size:17px;font-weight:650}
+.sec .desc{color:var(--ink2);font-size:13px;margin:0 0 16px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.tools input{flex:1;min-width:200px;padding:9px 12px;border:1px solid var(--line);
+  border-radius:8px;font-size:13px;color:var(--ink);background:#fff;outline:none}
+.tools input:focus{border-color:var(--brand)}
+.chip{padding:8px 14px;border:1px solid var(--line);background:#fff;border-radius:8px;
+  color:var(--ink2);font-size:13px;cursor:pointer}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.item{border:1px solid var(--line);border-radius:11px;padding:15px 17px;margin-bottom:11px;background:#fff}
+.item:last-child{margin-bottom:0}
+.row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.ver{font-size:16px;font-weight:650;letter-spacing:.2px}
+.badge{display:inline-block;padding:2px 9px;border-radius:6px;font-size:12px;font-weight:600}
+.badge.stable{background:var(--stable-bg);color:var(--stable)}
+.badge.beta{background:var(--beta-bg);color:var(--beta)}
+.date{color:var(--ink3);font-size:12px;margin-left:auto}
+.fname{color:var(--ink3);font-size:12px;margin:4px 0 0;word-break:break-all}
+.status{font-size:12px;color:var(--ink2);margin:7px 0 0;padding:6px 10px;background:var(--bg);border-radius:6px}
+.notes{margin:11px 0 0;padding-left:18px;color:var(--ink2);font-size:13px}
+.notes li{margin:3px 0;word-break:break-word}
+.more{margin-top:8px;background:none;border:none;color:var(--brand);cursor:pointer;
+  font-size:12px;padding:0}
+.foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px;
+  padding-top:12px;border-top:1px solid var(--line)}
+/* 三个下载入口并列：钉盘下载（蓝）/ 网页下载（灰白）/ 海外通道（绿）。
+   尺寸统一写死，切换英文时整体同步放宽，保证三者始终一致。 */
+.dl{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
+  width:136px;height:34px;padding:0 10px;border:1px solid var(--brand);
+  background:var(--brand-soft);color:#12467f;border-radius:8px;
+  font-size:13px;font-weight:600;line-height:1.2;white-space:nowrap;text-decoration:none}
+.dl.web{border-color:#cfccc3;background:#f5f4f0;color:#5c5b56}
+.dl.mirror{border-color:#12805f;background:#e3f5ec;color:#0a5942}
+.dl.off{border-color:#dedbd3;background:#f2f0ea;color:#9e9d97;cursor:not-allowed}
+.dl:hover{opacity:.88}
+html[lang="en"] .dl{width:150px;font-size:12px}
+.meta{color:var(--ink3);font-size:12px}
+.dlcount{font-size:12px;color:var(--ink3)}
+/* 附件下载：独立视觉区块，与标准下载明确区分 */
+#attachment{border:1px solid #ddd0f7;background:linear-gradient(180deg,#fbf8ff 0%,#fff 70px)}
+#attachment h2{color:var(--attach)}
+.attach-card{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;
+  border:1px solid #e4d9fa;background:#fff;border-radius:11px;padding:17px}
+.attach-ico{flex:0 0 44px;width:44px;height:44px;border-radius:10px;background:var(--attach-bg);
+  color:var(--attach);display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:700}
+.attach-body{flex:1;min-width:220px}
+.attach-name{font-weight:650;font-size:15px}
+.tag{display:inline-block;padding:2px 9px;border-radius:6px;font-size:12px;font-weight:600;
+  background:var(--attach-bg);color:var(--attach);margin-left:8px}
+.attach-note{color:var(--ink2);font-size:13px;margin:6px 0 0}
+.attach-links{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.empty{color:var(--ink3);text-align:center;padding:28px 0;font-size:13px}
+footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-height:1.9}
+/* ===== 页头三栏：LOGO / 标题真居中 / 语言切换（与 ACC 发布页一致） ===== */
+.head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
+.brand{grid-column:1;grid-row:1;justify-self:start;align-self:center}
+.brand img{display:block;width:120px;height:auto}
+/* ===== 语言切换（中文 / EN），逻辑与 ACC 发布页一致 ===== */
+.langsw{grid-column:3;grid-row:1;justify-self:end;display:inline-flex;flex:0 0 auto;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.langsw button{border:0;background:#fff;color:var(--ink2);font-size:12px;padding:5px 12px;cursor:pointer;font-family:inherit;line-height:1.5;white-space:nowrap}
+.langsw button+button{border-left:1px solid var(--line)}
+.langsw button[data-on="1"]{background:var(--brand-soft);color:var(--brand);font-weight:600}
+.langsw button:hover{color:var(--brand)}
+/* ===== 使用说明：编号列表，与 ACC 发布页一致 ===== */
+.tip{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px 22px;color:var(--ink2);font-size:13px}
+.tip>b{color:var(--ink)}
+.tip ol{margin:8px 0 0;padding-left:20px}
+.tip li{margin:5px 0}
+.tip li::marker{color:var(--brand);font-weight:600}
+@media(max-width:640px){
+  .wrap{padding:16px 12px 40px}.sec{padding:16px}.date{margin-left:0}
+  .head{grid-template-columns:1fr auto;row-gap:10px}
+  .brand{grid-column:1;grid-row:1}.brand img{width:104px}
+  h1{grid-column:1/-1;grid-row:2}
+  .langsw{grid-column:2;grid-row:1}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="head">
+    <div class="brand" id="brandSlot"><img src="data:image/png;base64,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" alt="汉邦 Hanbond CAD/CAM No.1 — CHINA" width="352" height="139"></div>
+    <h1 id="title" data-i18n="title">汉邦输出中心 版本发布</h1>
+    <div class="langsw" id="langsw" role="group" data-i18n-aria="lang_aria" aria-label="语言">
+      <button type="button" data-lang="zh" data-on="1">中文</button>
+      <button type="button" data-lang="en" data-on="0">EN</button>
+    </div>
+  </div>
+  <!-- 标题下方保留两行空白以凸显标题；原副标题文案已删除。
+       不要给这两行加 data-i18n，否则切换中英文时文案会被填回。 -->
+  <p class="sub" aria-hidden="true">&nbsp;</p>
+  <p class="sub" aria-hidden="true">&nbsp;</p>
+  <div class="path" id="srcPath">钉盘源路径加载中…</div>
+  <div class="stats">
+    <div class="stat"><b id="sAll">—</b><span data-i18n="stat_all">可下载版本</span></div>
+    <div class="stat"><b id="sStable" style="color:var(--stable)">—</b><span data-i18n="stat_stable">正式版（已测试）</span></div>
+    <div class="stat"><b id="sBeta" style="color:var(--beta)">—</b><span data-i18n="stat_beta">Beta 版（未测试 / 禁用）</span></div>
+    <div class="stat" id="statAttach" style="display:none"><b id="sAttach">—</b><span data-i18n="stat_attach">附件下载</span></div>
+  </div>
+</header>
+
+<div class="nav">
+  <a href="#standard" class="on" data-i18n="nav_standard">↓ 标准下载 · 版本安装包</a>
+  <a href="#attachment" data-i18n="nav_attachment" id="navAttach" style="display:none">↓ 附件下载</a>
+</div>
+
+<section class="sec" id="standard">
+  <h2 data-i18n="sec_standard">标准下载</h2>
+  <p class="desc" data-i18n="desc_standard">以下为钉盘中实际存在的安装包，按版本号倒序。点击下载会唤起已登录的钉钉客户端；若未安装客户端，可用「网页下载」兜底。</p>
+  <div class="tools">
+    <input id="q" type="search" data-i18n-ph="search_ph" placeholder="搜索版本号、更新日志、文件名、状态…" autocomplete="off">
+    <button class="chip on" data-f="all" data-i18n="chip_all">全部</button>
+    <button class="chip" data-f="stable" data-i18n="chip_stable">正式版</button>
+    <button class="chip" data-f="beta" data-i18n="chip_beta">Beta 版</button>
+  </div>
+  <div id="list"></div>
+</section>
+
+<section class="sec" id="attachment" style="display:none">
+  <h2 data-i18n="sec_attachment">附件下载</h2>
+  <div id="attachBox"></div>
+</section>
+
+<div class="tip" id="tip" data-i18n-html="tip"><b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本，仅最新版提供。</li><li><b>计数与搜索</b>：「本机已下载 N 次」只统计这台电脑的点击，不是公司总下载量；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol></div>
+
+<footer>
+  <div id="syncInfo" data-i18n="sync_loading">数据加载中…</div>
+  <div data-i18n="footer_path">钉钉 → 工作台 / 钉盘 → 团队文件 → 全员文件夹 → 研发部 → 发布软件 → 汉邦输出中心 发布版本</div>
+</footer>
+</div>
+
+<script>
+/* 静态托管要求子资源也携带 sharecode；解析期同步注入，等价于原来的 <script src> */
+(function(){
+  var sc = new URLSearchParams(location.search).get("sharecode") || "";
+  document.write('<script src="releases.js?v=20261119a' + (sc ? '&sharecode=' + encodeURIComponent(sc) : '') + '"><\/script>');
+})();
+</script>
+<script>
+(function(){
+  var $ = function(id){return document.getElementById(id)};
+  var esc = function(s){var d=document.createElement("div");d.textContent=String(s==null?"":s);return d.innerHTML};
+  var el = function(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e};
+  var state = {f:"all", q:"", lang:"zh"};
+  /* 语言：默认中文，切换后由本机浏览器记住（入口链接不带语言参数，链接始终固定） */
+  try{var _lg=localStorage.getItem("hboc_lang");if(_lg==="en"||_lg==="zh")state.lang=_lg}catch(e){}
+
+  function fail(msg){$("list").innerHTML='<div class="empty">'+esc(t("data_failed")+msg)+'</div>';}
+  function safeUrl(u){u=String(u||"");return /^(https?:\/\/|dingtalk:\/\/)/i.test(u)?u:"#";}
+
+  /* ===== 中英字典：逻辑与 ACC 发布页一致（切换后整页重渲染） ===== */
+  var I18N = {
+    zh: {
+      lang_aria:"语言", title:"汉邦输出中心 版本发布",
+      stat_all:"可下载版本", stat_stable:"正式版（已测试）", stat_beta:"Beta 版（未测试 / 禁用）", stat_attach:"附件下载",
+      nav_standard:"↓ 标准下载 · 版本安装包", nav_attachment:"↓ 附件下载 · 字体安装程序",
+      sec_standard:"标准下载",
+      desc_standard:"以下为钉盘中实际存在的安装包，按版本号倒序。点击下载会唤起已登录的钉钉客户端；若未安装客户端，可用「网页下载」兜底。",
+      search_ph:"搜索版本号、更新日志、文件名、状态…", chip_all:"全部", chip_stable:"正式版", chip_beta:"Beta 版",
+      sec_attachment:"附件下载",
+      sync_loading:"数据加载中…", footer_path:"钉钉 → 工作台 / 钉盘 → 团队文件 → 全员文件夹 → 研发部 → 发布软件 → 汉邦输出中心 发布版本",
+      btn_ding:"钉盘下载", btn_web:"网页下载", btn_mirror:"海外通道",
+      ti_ding:"钉盘下载：直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）",
+      ti_web:"网页下载：在浏览器里打开钉盘网页版这个安装包（首次需扫码）",
+      ti_mirror:"海外通道：直接下载 GitHub 上的同版本安装包（真实直链），境外/网络受限时用",
+      ti_mirror_off:"该版本暂无海外通道，仅最新版提供",
+      no_version:"没有匹配的版本。",
+      badge_stable:"正式版", badge_beta:"Beta 版",
+      status_label:"追踪记录（F 列）：", notes_unit:"条更新日志",
+      more_all:"展开全部 {n} 条", more_hide:"收起",
+      sync_info:"最近同步：{t} ｜ 数据源：{s} ｜ 日志匹配 {a}/{b} 条",
+      dlcount:"本机已下载 {n} 次", data_failed:"数据加载失败：",
+      tip:"<b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本，仅最新版提供。</li><li><b>计数与搜索</b>：「本机已下载 N 次」只统计这台电脑的点击，不是公司总下载量；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol>"
+    },
+    en: {
+      lang_aria:"Language", title:"Han-Bond Output Center · Releases",
+      stat_all:"Downloadable versions", stat_stable:"Stable (tested)", stat_beta:"Beta (untested / disabled)", stat_attach:"Attachments",
+      nav_standard:"↓ Standard · Builds", nav_attachment:"↓ Attachment · Font installer",
+      sec_standard:"Standard Downloads",
+      desc_standard:"Installers currently in DingTalk Drive, newest first. Clicking opens the signed-in DingTalk client; use Web Download if the client is not installed.",
+      search_ph:"Search version, changelog, filename, status…", chip_all:"All", chip_stable:"Stable", chip_beta:"Beta",
+      sec_attachment:"Attachment Downloads",
+      sync_loading:"Loading…", footer_path:"DingTalk → Workbench / Drive → Team Files → All Staff → R&D → Released Software → Han-Bond Output Center",
+      btn_ding:"DingTalk Drive", btn_web:"Web Download", btn_mirror:"Overseas Mirror",
+      ti_ding:"DingTalk Drive: opens this installer straight in your signed-in DingTalk desktop client (no QR scan in the browser; the browser asks for confirmation once — an .exe cannot be previewed, so click the download icon in its own top-right corner to save)",
+      ti_web:"Web Download: open this installer on the DingTalk web page (QR sign-in on first use)",
+      ti_mirror:"Overseas Mirror: downloads the same build straight from GitHub (direct link) — use it when DingTalk is blocked or slow",
+      ti_mirror_off:"No overseas mirror for this version — latest version only",
+      no_version:"No matching versions.",
+      badge_stable:"Stable", badge_beta:"Beta",
+      status_label:"Tracking (col F): ", notes_unit:"changelog entries",
+      more_all:"Show all {n}", more_hide:"Collapse",
+      sync_info:"Last sync: {t} | Source: {s} | Changelog matched {a}/{b}",
+      dlcount:"Downloaded {n} times on this device", data_failed:"Failed to load data: ",
+      tip:"<b>How to use</b><ol><li><b>Version list</b>: only installers actually present in DingTalk Drive, newest first; changelog comes from column E of the Han-Bond output center upgrade log.</li><li><b>Classification</b>: column F (Tracking Record) decides — tested / stable = Stable, anything else (pending / disabled / blank / notes) = Beta.</li><li><b>Three download channels</b>: “DingTalk Drive” opens this installer straight in your signed-in DingTalk desktop client (no QR scan in the browser; the browser asks for confirmation once — an .exe cannot be previewed, so click the download icon in its own top-right corner to save); “Web Download” opens the DingTalk web page (QR sign-in on first use); “Overseas Mirror” downloads the same build from GitHub; latest version only.</li><li><b>Counter and search</b>: the download counter only records clicks on this device, not company-wide downloads; the entry link never changes, and search covers versions, filenames and changelog keywords.</li></ol>"
+    }
+  };
+  function t(k){var m=I18N[state.lang]||I18N.zh;return m[k]==null?(I18N.zh[k]==null?k:I18N.zh[k]):m[k]}
+  function tf(k,v){var s=t(k);for(var p in v){s=s.split("{"+p+"}").join(v[p])}return s}
+  function dlText(n){return tf("dlcount",{n:n})}
+  function mLabel(m){return !m?t("btn_mirror"):(state.lang==="en"?(m.label_en||t("btn_mirror")):(m.label||t("btn_mirror")))}
+
+  /* 三个下载入口：钉盘下载（蓝，点开直接唤起钉钉客户端）/ 网页下载（灰白）/ 海外通道（绿，仅最新版可点） */
+  function dlButtons(file, mirror, isLatest, key){
+    var f=file||{};
+    /* 「钉盘下载」直接唤起已登录的钉钉客户端打开这个文件（深链），
+       弹出的预览窗是钉钉自己的界面（exe 不能预览，在它右上角点下载图标保存）。 */
+    var h='<a class="dl" data-dlkey="'+esc(key)+'" href="'+esc(safeUrl(f.dl_url))+'" title="'+esc(t("ti_ding"))+'">'+esc(t("btn_ding"))+'</a>'+
+          '<a class="dl web" href="'+esc(safeUrl(f.web_url))+'" target="_blank" rel="noopener noreferrer" title="'+esc(t("ti_web"))+'">'+esc(t("btn_web"))+'</a>';
+    if(mirror&&mirror.url&&isLatest){
+      h+='<a class="dl mirror" href="'+esc(safeUrl(mirror.url))+'" target="_blank" rel="noopener noreferrer" title="'+esc(t("ti_mirror"))+'">'+esc(mLabel(mirror))+'</a>';
+    }else{
+      h+='<span class="dl off" title="'+esc(t("ti_mirror_off"))+'">'+esc(mLabel(mirror))+'</span>';
+    }
+    return h;
+  }
+
+  function applyLang(){
+    document.documentElement.lang=(state.lang==="en"?"en":"zh-CN");
+    document.title=t("title");
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i18n]"),function(n){
+      n.textContent=t(n.getAttribute("data-i18n"))});
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i18n-html]"),function(n){
+      n.innerHTML=t(n.getAttribute("data-i18n-html"))});
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i18n-ph]"),function(n){
+      n.setAttribute("placeholder",t(n.getAttribute("data-i18n-ph")))});
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i18n-aria]"),function(n){
+      n.setAttribute("aria-label",t(n.getAttribute("data-i18n-aria")))});
+    Array.prototype.forEach.call(document.querySelectorAll("#langsw button"),function(b){
+      b.setAttribute("data-on",b.getAttribute("data-lang")===state.lang?"1":"0")});
+    if(window.__D)render(window.__D);
+  }
+  function setLang(l){
+    state.lang=(l==="en")?"en":"zh";
+    try{localStorage.setItem("hboc_lang",state.lang)}catch(e){}
+    applyLang();
+  }
+
+  /* 本机下载计数：页面收不到钉盘深链 / 浏览器下载的「完成」回执，
+     按「点击下载」动作在本机累计（口径与 CuttingCenterController 发布页一致）。
+     数据只存本机浏览器 localStorage，仅代表这台电脑点过几次，不是全公司真实下载量。 */
+  function dlKey(v){return "hboc_dl_"+v}
+  function getDl(v){try{var n=parseInt(localStorage.getItem(dlKey(v)),10);return isNaN(n)?0:n}catch(e){return 0}}
+  function incDl(v){try{var n=getDl(v)+1;localStorage.setItem(dlKey(v),String(n));return n}catch(e){return getDl(v)}}
+  function bindDl(root, key){
+    if(!root) return;
+    var span = root.querySelector(".dlcount");
+    if(!span) return;
+    /* 所有可点的下载按钮点一下 +1 */
+    var as = root.querySelectorAll("a.dl");
+    for(var i=0;i<as.length;i++){
+      as[i].addEventListener("click",function(){
+        span.textContent = dlText(incDl(key));
+      });
+    }
+  }
+
+  /* 英文模式优先渲染由 i18n_notes.json 合并进来的 notes_en；无译文则回退中文 */
+  function pickNotes(r){
+    return (state.lang==="en" && r && r.notes_en && r.notes_en.length)
+      ? r.notes_en : ((r && r.notes) || []);
+  }
+
+  function notesHtml(notes, idx){
+    notes = notes || [];
+    if(!notes.length) return "";
+    var shown = notes.slice(0,3).map(function(n){return "<li>"+esc(n)+"</li>"}).join("");
+    var html = '<ul class="notes" id="nt'+idx+'">'+shown+'</ul>';
+    if(notes.length>3){
+      html += '<button class="more" data-i="'+idx+'" data-n="'+esc(JSON.stringify(notes))+
+              '">'+tf("more_all",{n:notes.length})+'</button>';
+    }
+    return html;
+  }
+
+  function render(data){
+    var rel = data.releases || [], att = data.attachment, mirror = data.mirror || {};
+    $("srcPath").textContent = (data.storage && data.storage.source_path) || "";
+    $("sAll").textContent = rel.length;
+    $("sStable").textContent = rel.filter(function(r){return r.channel==="stable"}).length;
+    $("sBeta").textContent = rel.filter(function(r){return r.channel==="beta"}).length;
+    $("sAttach").textContent = att ? 1 : 0;
+    /* 本仓库没有专用附件渠道时，附件导航 / 区块 / 统计卡整体隐藏，不留空壳 */
+    var hasAtt = !!att;
+    if($("navAttach")) $("navAttach").style.display = hasAtt ? "" : "none";
+    if($("statAttach")) $("statAttach").style.display = hasAtt ? "" : "none";
+    var attSec = $("attachment");
+    if(attSec) attSec.style.display = hasAtt ? "" : "none";
+    $("syncInfo").textContent = tf("sync_info", {
+      t: ((data.storage && data.storage.last_sync) || data.generated_at || "—"),
+      s: (data.source || "—"),
+      a: ((data.storage && data.storage.record_matched) || 0),
+      b: rel.length });
+
+    // 附件下载（独立渠道）
+    if(att){
+      var attKey = att.name || "hboc_attachment";
+      var attNote = state.lang==="en" ? t("att_note") : (att.note||t("att_note"));
+      $("attachBox").innerHTML =
+        '<div class="attach-card">'+
+          '<div class="attach-ico">A</div>'+
+          '<div class="attach-body">'+
+            '<div class="attach-name">'+esc(att.name)+'<span class="tag">'+esc(t("att_tag"))+'</span></div>'+
+            '<div class="attach-note">'+esc(attNote)+'</div>'+
+            '<div class="meta" style="margin-top:6px">'+esc(t("att_size"))+' '+esc(att.size||"—")+' ｜ '+esc(t("att_kind"))+'</div>'+
+            '<div class="attach-links">'+
+              dlButtons(att, mirror.attachment, true, attKey)+
+              '<span class="dlcount">'+esc(dlText(getDl(attKey)))+'</span>'+
+            '</div>'+
+          '</div>'+
+        '</div>';
+      bindDl($("attachBox").querySelector(".attach-card"), attKey);
+    }else{
+      $("attachBox").innerHTML = "";
+    }
+
+    // 标准下载列表
+    var q = state.q.trim().toLowerCase();
+    var items = rel.filter(function(r){
+      if(state.f!=="all" && r.channel!==state.f) return false;
+      if(!q) return true;
+      var hay = [r.version, r.version_short, r.version_raw, r.date, r.status,
+                 (r.file||{}).name, (r.notes||[]).join(" "),
+                 (r.notes_en||[]).join(" ")].join(" ").toLowerCase();
+      return hay.indexOf(q)>=0;
+    });
+    if(!items.length){ $("list").innerHTML='<div class="empty">'+esc(t("no_version"))+'</div>'; }
+    else{
+      $("list").innerHTML = items.map(function(r,i){
+        var f = r.file || {};
+        var badge = r.channel==="beta" ? '<span class="badge beta">'+esc(t("badge_beta"))+'</span>'
+                                       : '<span class="badge stable">'+esc(t("badge_stable"))+'</span>';
+        var st = r.status ? '<div class="status">'+esc(t("status_label"))+esc(r.status)+'</div>' : "";
+        var dk = r.version || r.version_short || f.name || String(i);
+        var links = dlButtons(f, mirror.package, r===rel[0], dk);
+        return '<div class="item" data-dli="'+i+'">'+
+          '<div class="row"><span class="ver">'+esc(r.version||r.version_short)+'</span>'+badge+
+          '<span class="date">'+esc(r.date||"")+' · '+esc(f.size||"")+'</span></div>'+
+          '<p class="fname">'+esc(f.name||r.version_raw||"")+'</p>'+ st + notesHtml(pickNotes(r),i)+
+          '<div class="foot">'+links+'<span class="meta">'+esc(pickNotes(r).length)+' '+esc(t("notes_unit"))+'</span>'+
+            '<span class="dlcount">'+esc(dlText(getDl(dk)))+'</span></div>'+
+        '</div>';
+      }).join("");
+      Array.prototype.forEach.call($("list").querySelectorAll(".item[data-dli]"), function(card){
+        var j = +card.getAttribute("data-dli"), rr = items[j], ff = rr.file || {};
+        var key = rr.version || rr.version_short || ff.name || String(j);
+        bindDl(card, key);
+      });
+    }
+    $("list").querySelectorAll(".more").forEach(function(b){
+      b.addEventListener("click",function(){
+        var notes = JSON.parse(b.getAttribute("data-n"));
+        var ul = $("nt"+b.getAttribute("data-i"));
+        var open = b.getAttribute("data-open")==="1";
+        ul.innerHTML = notes.slice(0,open?3:notes.length).map(function(n){return "<li>"+esc(n)+"</li>"}).join("");
+        b.textContent = open ? tf("more_all",{n:notes.length}) : t("more_hide");
+        b.setAttribute("data-open", open?"0":"1");
+      });
+    });
+
+  }
+
+  $("q").addEventListener("input",function(e){state.q=e.target.value;if(window.__D)render(window.__D)});
+  document.querySelectorAll(".chip").forEach(function(c){
+    c.addEventListener("click",function(){
+      document.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on")});
+      c.classList.add("on"); state.f=c.getAttribute("data-f");
+      if(window.__D) render(window.__D);
+    });
+  });
+  document.querySelectorAll(".nav a").forEach(function(a){
+    a.addEventListener("click",function(){
+      document.querySelectorAll(".nav a").forEach(function(x){x.classList.remove("on")});
+      a.classList.add("on");
+    });
+  });
+  /* 语言切换：中文 / EN，切换后整页重渲染，选择记在本机浏览器 */
+  Array.prototype.forEach.call(document.querySelectorAll("#langsw button"),function(b){
+    b.addEventListener("click",function(){setLang(b.getAttribute("data-lang"))})});
+
+  function init(d){ window.__D=d; applyLang(); }
+  if(window.RELEASE_DATA){ init(window.RELEASE_DATA); }
+  else{
+    var sc = new URLSearchParams(location.search).get("sharecode") || "";
+    fetch("releases.json?v=20261119a" + (sc ? "&sharecode=" + encodeURIComponent(sc) : ""))
+      .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})
+      .then(init).catch(function(e){fail(e.message)});
+  }
+  if(location.hash==="#attachment"){ setTimeout(function(){ location.hash="#attachment"; },80); }
+})();
+</script>
+</body>
+</html>
