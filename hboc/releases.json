@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "product": "hboc",
-  "generated_at": "2026-11-20 13:12:15",
+  "generated_at": "2026-11-20 13:18:46",
   "source": "《汉邦输出中心版本更新记录.xlsx》D/E/F 列",
   "entry_url": "https://zhangyi19861102.github.io/dingpan-file-mirror/hboc/",
   "mirror": {
@@ -35,7 +35,7 @@
     "file_count": 2,
     "package_count": 1,
     "record_matched": 1,
-    "last_sync": "2026-11-20T13:12:13",
+    "last_sync": "2026-11-20T13:18:44",
     "note_en": "DingTalk → Workbench / Drive → Team Files → All Staff → R&D → Released Software → Han-Bond Print System"
   },
   "attachment": null,
