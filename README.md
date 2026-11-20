@@ -2,9 +2,10 @@
 
 ## 方案要点
 - 钉盘（国内主渠道）原样不动，不做任何改动；历史版本全部留在钉盘。
-- GitHub 作为海外独立下载渠道，只放三个软件的**最新版** + Kimo 字体包。
-- 安装包放在 **GitHub Release**，附件保留带版本号的原始文件名；网页打开时自动读取最新 Release，按文件名关键字匹配对应软件并填充下载地址。网页地址不变，客户下载到的文件名即为附件原名。
-- 三个软件共用 **同一个仓库、同一个 Release**（当前 tag `v1.1`），互不干扰：ACC 主包、输出中心主包、Kimo 主包、Kimo 字体包各占一个附件名。
+- GitHub 作为海外独立下载渠道：同一仓库、同一 Release（当前 `v1.1`），三个软件各占自己的附件名，互不干扰。
+- **附件只增不删**：同一个 Release 里可以并存同一软件的多个历史版本，文件名自带版本号。
+- 发布页按**版本号匹配**决定「海外通道」按钮是否点亮：GitHub 上有这个版本的包 → 按钮可点、直达该文件；没传 → 按钮灰色，提示先用钉盘。这样既不会 404，也能让老版本继续可下载。
+- 网页地址固定不变，客户下载到的文件名就是附件原名。
 
 ## 仓库信息
 - Owner：`zhangyi19861102`
@@ -12,32 +13,47 @@
 - 仓库地址：https://github.com/zhangyi19861102/dingpan-file-mirror
 - 网页（GitHub Pages）：https://zhangyi19861102.github.io/dingpan-file-mirror/
 
-## 当前最新版（Release v1.1 现存附件）
+## 命名规则（决定按钮能不能点亮）
+
+| 软件 | 附件名格式 | 示例 |
+|---|---|---|
+| ACC 切割中心 | `ACC_setup_<版本>.exe` | `ACC_setup_1.2.1.2Beta5.exe` |
+| 汉邦输出中心 | `Han-Bond-Print-System_<版本>.exe` | `Han-Bond-Print-System_1.0.0.1Beta2.exe` |
+| Kimo 企业版 | 原始名（含版本号即可，中文会被 GitHub 去掉） | `kimo-.26-9-3.rar` |
+| Kimo 字体包 | 固定名 | `kimo-fonts.rar` |
+
+版本号是匹配的唯一依据：文件名里必须能解析出与发布页一致的版本串
+（`1.2.1.2Beta5`、`1.0.0.1Beta2`、`26-9-3`）。
+
+## 当前 Release v1.1 现存附件
 
 | 上传文件名 | 对应软件 | 版本/日期 | 大小 |
 |---|---|---|---|
-| `ACC_setup_1.2.1.2Beta0.exe` | ACC 切割中心 | 1.2.1.2 Beta0 | 182.0 MB |
-| `Han-Bond-Print-System.exe` | 汉邦输出中心 | 1.0.0.1 Beta2 | 64.9 MB |
+| `ACC_setup_1.2.1.2Beta5.exe` | ACC 切割中心 | 1.2.1.2 Beta05 | 182.1 MB |
+| `Han-Bond-Print-System_1.0.0.1Beta2.exe` | 汉邦输出中心 | 1.0.0.1 Beta2 | 64.9 MB |
 | `kimo-.26-9-3.rar` | Kimo 企业版 | 26-9-3（2026-09-03） | 155.8 MB |
 | `kimo-fonts.rar` | Kimo 字体包（可选） | — | 42.4 MB |
 
-> 输出中心用**固定名** `Han-Bond-Print-System.exe`（与 ACC/Kimo 保留原名不同）：它由 `hboc_sync.py` 每次从钉盘最新版覆盖上传，页面直链因此不会随版本改名而漂移。
+## 发版流程（四个软件同一套）
 
-## 后续更新流程
-- **输出中心**：不需要手工归档。在 `D:\workbuddy存储路径\2026-11-12-09-26-24\hboc-release-page\` 下依次跑 `hboc_sync.py sync`（钉盘 → 数据 + 自动覆盖上传 `Han-Bond-Print-System.exe`）→ `verify` → `publish_to_github.py`（推发布页到仓库 `hboc/` 子目录）。
-- **ACC / Kimo**：继续用本工具手工归档 + 在 GitHub 上建 Release，或改用各自项目的同步脚本。
 1. 钉盘上传新版（国内渠道不变）。
-2. 把新包放进本工具 `inbox\`，双击 `一键归档.bat`，脚本按类别归档原名到 `release-assets\` 并生成清单。
-3. GitHub 新建 Release（Tag：v1.1 / v1.2 …），把 `release-assets\` 里的原名文件上传，Publish release。
-4. 网页自动指向最新版，网页地址和按钮无需改动；按清单把版本号追加到 `RELEASES.md`。
+2. 把新包放进 `inbox\`，双击 `一键归档.bat`：按类别归档到 `release-assets\`（除字体包外都保留带版本号的名字）并生成本次清单。
+3. GitHub 上把 `release-assets\` 里的文件传到 Release `v1.1`——**新版本直接上传，不要去删旧版本**。
+4. 双击 `刷新海外通道.bat`：读取 GitHub 上全部附件，按版本号刷新三个发布页的数据（`releases.json` / `releases.js`），并列出哪些版本已点亮。
+5. 部署：
+   - 输出中心：`publish_to_github.py` 推到 GitHub Pages（`hboc/` 子目录）。
+   - ACC / Kimo：在 WorkBuddy 里点一次部署。
+6. 把版本号追加到 `RELEASES.md`。
+
+> 输出中心也可以全自动：`hboc_sync.py sync` 会从钉盘拉最新版并按 `Han-Bond-Print-System_<版本>.exe` 上传（旧版本不删）。
 
 ## 网页匹配规则（关键字）
 - 含 `ACC` → ACC 切割中心
 - 含 `hboc` / `han-bond` / `print system` / `输出中心` → 汉邦输出中心
 - 含 `字体` / `font` → Kimo 字体包（固定名 `kimo-fonts.rar`）
-- 含 `kimo` → Kimo 企业版（保留版本号原名）
+- 含 `kimo` → Kimo 企业版
 
-## 网页锚点定位（2026-11-14 新增，2026-11-20 扩充）
+## 网页锚点定位
 网页支持锚点，进入后自动高亮并滚动定位到对应条目，**文件名本身就是下载直链**，点击文件名即可直接下载：
 
 | 锚点 | 定位条目 |
@@ -53,6 +69,5 @@
 ## 注意事项
 - 普通仓库分支单文件上限 100MB；百兆级安装包必须放 Release（单附件上限 2GB）。
 - 不要把安装包直接提交到 main 分支；main 分支只放 `index.html`。
-- 历史版本不上传 GitHub，继续保留在钉盘。
+- Release 附件会随版本累积，建议保留最近 10 个左右的版本，旧的再清理（清理后对应页面按钮自动变灰，不会 404）。
 - 国内访问 GitHub 较慢属正常，本渠道面向海外用户；国内继续走钉盘。
-- 网页依赖公开 API 读取最新版本；API 不可用时按钮回退到兜底固定名链接。
