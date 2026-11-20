@@ -38,14 +38,14 @@
         <!--
             下载说明：
             按钮地址由页面脚本自动读取 GitHub 最新 Release（/releases/latest）后动态填充，
-            按文件名关键字匹配：ACC / kimo（主包）/ font（字体包）。
+            按文件名关键字匹配：ACC / hboc（输出中心）/ kimo（主包）/ font（字体包）。
             附件文件名可带真实版本号，客户下载到的文件名即为附件原名。
             匹配时取「版本号最大」的附件，而不是数组里第一个匹配的 ——
             同一个 Release 里可能同时留着旧版和新版，取第一个会下到旧包。
             下方 href 为 API 不可用时的兜底链接（打开 Release 页面）。
 
             锚点定位（2026-11-14 新增）：
-            URL 带 #acc / #kimo / #fonts 时，自动高亮并滚动定位到对应条目，
+            URL 带 #acc / #hboc / #kimo / #fonts 时，自动高亮并滚动定位到对应条目，
             条目下方文件名本身就是直链，点击文件名即可直接下载对应文件。
             发布页的「海外通道」按主包 #kimo、字体包 #fonts 分别跳转。
         -->
@@ -57,6 +57,13 @@
             <div class="group-desc">Cutting center control software (latest release).</div>
             <a id="btn-acc" class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener">Download ACC Setup</a>
             <a id="ver-acc" class="ver" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener" aria-disabled="true">loading latest file…</a>
+        </div>
+
+        <div class="group" id="g-hboc" data-key="hboc">
+            <div class="group-title">Han-Bond Output Center</div>
+            <div class="group-desc">Han-Bond output center software (latest release).</div>
+            <a id="btn-hboc" class="btn" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener">Download Han-Bond Output Center</a>
+            <a id="ver-hboc" class="ver" href="https://github.com/zhangyi19861102/dingpan-file-mirror/releases/latest" target="_blank" rel="noopener" aria-disabled="true">loading latest file…</a>
         </div>
 
         <div class="group" id="g-kimo" data-key="kimo">
@@ -83,6 +90,7 @@
         /* 锚点 → 条目说明，用于顶部提示条 */
         var LABEL = {
             acc:   'ACC Cutting Center Controller',
+            hboc:  'Han-Bond Output Center',
             kimo:  'Kimo Enterprise (main program)',
             fonts: 'Kimo Font Pack (optional)'
         };
@@ -111,7 +119,7 @@
             var m = name.match(/(\d+(?:\.\d+)*)/);
             var nums = m ? m[1].split('.').map(function (x) { return parseInt(x, 10) || 0; }) : [0];
             var b = name.match(/[Bb]eta(\d+)/);
-            var beta = b ? parseInt(b.group(1), 10) : 0;
+            var beta = b ? parseInt(b[1], 10) : 0;
             if (b && nums.length && nums[nums.length - 1] === beta) nums.pop();
             return { v: nums, b: beta };
         }
@@ -158,8 +166,10 @@
                 var assets = data.assets || [];
                 var fonts = newest(assets.filter(function (x) { return /font|字体/i.test(x.name); }));
                 var acc = newest(assets.filter(function (x) { return /acc/i.test(x.name); }));
+                var hboc = newest(assets.filter(function (x) { return /hboc|han-?bond|输出中心/i.test(x.name); }));
                 var kimo = newest(assets.filter(function (x) { return !/font|字体/i.test(x.name) && /kimo/i.test(x.name); }));
                 bindAsset('btn-acc', 'ver-acc', acc);
+                bindAsset('btn-hboc', 'ver-hboc', hboc);
                 bindAsset('btn-kimo', 'ver-kimo', kimo);
                 bindAsset('btn-fonts', 'ver-fonts', fonts);
                 var tag = document.getElementById('rel-tag');
@@ -167,11 +177,11 @@
                 applySelection();
             })
             .catch(function () {
-                ['btn-acc', 'btn-kimo', 'btn-fonts'].forEach(function (id) {
+                ['btn-acc', 'btn-hboc', 'btn-kimo', 'btn-fonts'].forEach(function (id) {
                     var b = document.getElementById(id);
                     if (b) b.href = FALLBACK;
                 });
-                ['ver-acc', 'ver-kimo', 'ver-fonts'].forEach(function (id) {
+                ['ver-acc', 'ver-hboc', 'ver-kimo', 'ver-fonts'].forEach(function (id) {
                     var v = document.getElementById(id);
                     if (v) { v.textContent = 'open release page to download'; v.href = FALLBACK; v.setAttribute('aria-disabled', 'true'); }
                 });
