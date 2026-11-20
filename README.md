@@ -1,4 +1,4 @@
-﻿# 海外软件下载渠道（GitHub 备用镜像）
+# 海外软件下载渠道（GitHub 备用镜像）
 
 ## 方案要点
 - 钉盘（国内主渠道）原样不动，不做任何改动；历史版本全部留在钉盘。
@@ -17,14 +17,14 @@
 | 上传文件名 | 对应软件 | 版本/日期 | 大小 |
 |---|---|---|---|
 | `ACC_setup_1.2.1.2Beta0.exe` | ACC 切割中心 | 1.2.1.2 Beta0 | 182.0 MB |
-| `hboc-setup.exe` | 汉邦输出中心 | 1.0.0.1 Beta2 | 64.9 MB |
+| `Han-Bond-Print-System.exe` | 汉邦输出中心 | 1.0.0.1 Beta2 | 64.9 MB |
 | `kimo-.26-9-3.rar` | Kimo 企业版 | 26-9-3（2026-09-03） | 155.8 MB |
 | `kimo-fonts.rar` | Kimo 字体包（可选） | — | 42.4 MB |
 
-> 输出中心用**固定名** `hboc-setup.exe`（与 ACC/Kimo 保留原名不同）：它由 `hboc_sync.py` 每次从钉盘最新版覆盖上传，页面直链因此不会随版本改名而漂移。
+> 输出中心用**固定名** `Han-Bond-Print-System.exe`（与 ACC/Kimo 保留原名不同）：它由 `hboc_sync.py` 每次从钉盘最新版覆盖上传，页面直链因此不会随版本改名而漂移。
 
 ## 后续更新流程
-- **输出中心**：不需要手工归档。在 `D:\workbuddy存储路径\2026-11-12-09-26-24\hboc-release-page\` 下依次跑 `hboc_sync.py sync`（钉盘 → 数据 + 自动覆盖上传 `hboc-setup.exe`）→ `verify` → `publish_to_github.py`（推发布页到仓库 `hboc/` 子目录）。
+- **输出中心**：不需要手工归档。在 `D:\workbuddy存储路径\2026-11-12-09-26-24\hboc-release-page\` 下依次跑 `hboc_sync.py sync`（钉盘 → 数据 + 自动覆盖上传 `Han-Bond-Print-System.exe`）→ `verify` → `publish_to_github.py`（推发布页到仓库 `hboc/` 子目录）。
 - **ACC / Kimo**：继续用本工具手工归档 + 在 GitHub 上建 Release，或改用各自项目的同步脚本。
 1. 钉盘上传新版（国内渠道不变）。
 2. 把新包放进本工具 `inbox\`，双击 `一键归档.bat`，脚本按类别归档原名到 `release-assets\` 并生成清单。
