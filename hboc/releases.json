@@ -1,18 +1,22 @@
 {
   "schema_version": 1,
   "product": "hboc",
-  "generated_at": "2026-11-19 12:12:06",
+  "generated_at": "2026-11-20 08:29:18",
   "source": "《汉邦输出中心版本更新记录.xlsx》D/E/F 列",
   "entry_url": "https://zhangyi19861102.github.io/dingpan-file-mirror/hboc/",
   "mirror": {
     "package": {
       "label": "海外通道",
-      "url": "https://zhangyi19861102.github.io/hboc-file-mirror/#hboc",
-      "note": "海外通道：打开 GitHub 下载页并自动定位到对应文件，点击文件名即可下载；境外/网络受限时用，无需登录钉钉。",
+      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/hboc-setup.exe",
+      "note": "海外通道：从 GitHub 下载同一版本安装包，境外/网络受限时用，无需登录钉钉；仅提供最新版。",
       "label_en": "Overseas Mirror",
       "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Latest version only.",
-      "direct": false,
-      "fallback_url": "https://zhangyi19861102.github.io/hboc-file-mirror/#hboc",
+      "direct": true,
+      "fallback_url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases#hboc",
+      "tag": "v1.1",
+      "asset": "hboc-setup.exe",
+      "size": 68037508,
+      "sha256": "47092f1a0f75854dbcc3d728a6caf59b624430cb500f02fdd596617538d9d70f",
       "note_en_page": "Overseas mirror: opens the GitHub download page and jumps to the matching file, where you click the filename to download. No DingTalk sign-in needed."
     }
   },
@@ -31,7 +35,7 @@
     "file_count": 2,
     "package_count": 1,
     "record_matched": 1,
-    "last_sync": "2026-11-19T12:12:03",
+    "last_sync": "2026-11-20T08:29:17",
     "note_en": "DingTalk → Workbench / Drive → Team Files → All Staff → R&D → Released Software → Han-Bond Output Center"
   },
   "attachment": null,
