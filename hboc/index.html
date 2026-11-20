@@ -162,7 +162,7 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
   <div id="attachBox"></div>
 </section>
 
-<div class="tip" id="tip" data-i18n-html="tip"><b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本，仅最新版提供。</li><li><b>计数与搜索</b>：「本机已下载 N 次」只统计这台电脑的点击，不是公司总下载量；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol></div>
+<div class="tip" id="tip" data-i18n-html="tip"><b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本；GitHub 上已有该版本的包就点亮，没有则显示灰按钮。</li><li><b>计数与搜索</b>：「本机已下载 N 次」只统计这台电脑的点击，不是公司总下载量；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol></div>
 
 <footer>
   <div id="syncInfo" data-i18n="sync_loading">数据加载中…</div>
@@ -204,14 +204,14 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
       ti_ding:"钉盘下载：直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）",
       ti_web:"网页下载：在浏览器里打开钉盘网页版这个安装包（首次需扫码）",
       ti_mirror:"海外通道：直接下载 GitHub 上的同版本安装包（真实直链），境外/网络受限时用",
-      ti_mirror_off:"该版本暂无海外通道，仅最新版提供",
+      ti_mirror_off:"该版本暂无海外通道（GitHub 上还没传这个版本的安装包），请先用钉盘下载",
       no_version:"没有匹配的版本。",
       badge_stable:"正式版", badge_beta:"Beta 版",
       status_label:"追踪记录（F 列）：", notes_unit:"条更新日志",
       more_all:"展开全部 {n} 条", more_hide:"收起",
       sync_info:"最近同步：{t} ｜ 数据源：{s} ｜ 日志匹配 {a}/{b} 条",
       dlcount:"本机已下载 {n} 次", data_failed:"数据加载失败：",
-      tip:"<b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本，仅最新版提供。</li><li><b>计数与搜索</b>：「本机已下载 N 次」只统计这台电脑的点击，不是公司总下载量；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol>"
+      tip:"<b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本；GitHub 上已有该版本的包就点亮，没有则显示灰按钮。</li><li><b>计数与搜索</b>：「本机已下载 N 次」只统计这台电脑的点击，不是公司总下载量；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol>"
     },
     en: {
       lang_aria:"Language", title:"Han-Bond Print System · Releases",
@@ -226,14 +226,14 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
       ti_ding:"DingTalk Drive: opens this installer straight in your signed-in DingTalk desktop client (no QR scan in the browser; the browser asks for confirmation once — an .exe cannot be previewed, so click the download icon in its own top-right corner to save)",
       ti_web:"Web Download: open this installer on the DingTalk web page (QR sign-in on first use)",
       ti_mirror:"Overseas Mirror: downloads the same build straight from GitHub (direct link) — use it when DingTalk is blocked or slow",
-      ti_mirror_off:"No overseas mirror for this version — latest version only",
+      ti_mirror_off:"No overseas mirror for this build yet — the package for this version has not been uploaded to GitHub, please use DingTalk Drive",
       no_version:"No matching versions.",
       badge_stable:"Stable", badge_beta:"Beta",
       status_label:"Tracking (col F): ", notes_unit:"changelog entries",
       more_all:"Show all {n}", more_hide:"Collapse",
       sync_info:"Last sync: {t} | Source: {s} | Changelog matched {a}/{b}",
       dlcount:"Downloaded {n} times on this device", data_failed:"Failed to load data: ",
-      tip:"<b>How to use</b><ol><li><b>Version list</b>: only installers actually present in DingTalk Drive, newest first; changelog comes from column E of the Han-Bond Print System upgrade log.</li><li><b>Classification</b>: column F (Tracking Record) decides — tested / stable = Stable, anything else (pending / disabled / blank / notes) = Beta.</li><li><b>Three download channels</b>: “DingTalk Drive” opens this installer straight in your signed-in DingTalk desktop client (no QR scan in the browser; the browser asks for confirmation once — an .exe cannot be previewed, so click the download icon in its own top-right corner to save); “Web Download” opens the DingTalk web page (QR sign-in on first use); “Overseas Mirror” downloads the same build from GitHub; latest version only.</li><li><b>Counter and search</b>: the download counter only records clicks on this device, not company-wide downloads; the entry link never changes, and search covers versions, filenames and changelog keywords.</li></ol>"
+      tip:"<b>How to use</b><ol><li><b>Version list</b>: only installers actually present in DingTalk Drive, newest first; changelog comes from column E of the Han-Bond Print System upgrade log.</li><li><b>Classification</b>: column F (Tracking Record) decides — tested / stable = Stable, anything else (pending / disabled / blank / notes) = Beta.</li><li><b>Three download channels</b>: “DingTalk Drive” opens this installer straight in your signed-in DingTalk desktop client (no QR scan in the browser; the browser asks for confirmation once — an .exe cannot be previewed, so click the download icon in its own top-right corner to save); “Web Download” opens the DingTalk web page (QR sign-in on first use); “Overseas Mirror” downloads the same build from GitHub; offered per version — lit whenever that build is on GitHub.</li><li><b>Counter and search</b>: the download counter only records clicks on this device, not company-wide downloads; the entry link never changes, and search covers versions, filenames and changelog keywords.</li></ol>"
     }
   };
   function t(k){var m=I18N[state.lang]||I18N.zh;return m[k]==null?(I18N.zh[k]==null?k:I18N.zh[k]):m[k]}
@@ -373,7 +373,12 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
                                        : '<span class="badge stable">'+esc(t("badge_stable"))+'</span>';
         var st = r.status ? '<div class="status">'+esc(t("status_label"))+esc(r.status)+'</div>' : "";
         var dk = r.version || r.version_short || f.name || String(i);
-        var links = dlButtons(f, mirror.package, r===rel[0], dk);
+        /* 海外通道按版本匹配：GitHub 上存在同版本附件就点亮，没传的版本显示灰按钮 */
+        var mvmap = data.mirror_versions || {};
+        var mv = mvmap[r.version_short] || mvmap[r.version] || null;
+        var mo = mv || mirror.package;
+        var mon = !!mv || (r === rel[0] && !!(mirror.package && mirror.package.url));
+        var links = dlButtons(f, mo, mon, dk);
         return '<div class="item" data-dli="'+i+'">'+
           '<div class="row"><span class="ver">'+esc(r.version||r.version_short)+'</span>'+badge+
           '<span class="date">'+esc(r.date||"")+' · '+esc(f.size||"")+'</span></div>'+
