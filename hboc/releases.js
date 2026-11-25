@@ -1,9 +1,10 @@
 window.RELEASE_DATA = {
   "schema_version": 1,
   "product": "hboc",
-  "generated_at": "2026-11-25 13:49:27",
+  "generated_at": "2026-11-25 18:10:56",
   "source": "《汉邦输出中心版本更新记录.xlsx》D/E/F 列",
   "entry_url": "https://zhangyi19861102.github.io/dingpan-file-mirror/hboc/",
+  "stats_at": "2026-11-25T18:10:52",
   "mirror": {
     "package": {
       "label": "海外通道",
@@ -35,7 +36,7 @@ window.RELEASE_DATA = {
     "file_count": 3,
     "package_count": 2,
     "record_matched": 2,
-    "last_sync": "2026-11-25T13:49:26",
+    "last_sync": "2026-11-25T18:10:52",
     "note_en": "DingTalk → Workbench / Drive → Team Files → All Staff → R&D → Released Software → Han-Bond Print System"
   },
   "attachment": null,
@@ -67,6 +68,10 @@ window.RELEASE_DATA = {
         "url_kind": "dingtalk",
         "matched": true,
         "missing": false
+      },
+      "stats": {
+        "dingtalk": 0,
+        "overseas": 0
       }
     },
     {
@@ -100,6 +105,10 @@ window.RELEASE_DATA = {
         "url_kind": "dingtalk",
         "matched": true,
         "missing": false
+      },
+      "stats": {
+        "dingtalk": 7,
+        "overseas": 3
       }
     }
   ]
