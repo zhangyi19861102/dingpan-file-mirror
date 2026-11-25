@@ -162,7 +162,7 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
   <div id="attachBox"></div>
 </section>
 
-<div class="tip" id="tip" data-i18n-html="tip"><b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本；GitHub 上已有该版本的包就点亮，没有则显示灰按钮。</li><li><b>计数与搜索</b>：「本机已下载 N 次」只统计这台电脑的点击，不是公司总下载量；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol></div>
+<div class="tip" id="tip" data-i18n-html="tip"><b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本；GitHub 上已有该版本的包就点亮，没有则显示灰按钮。</li><li><b>下载统计与搜索</b>：「钉盘下载 N 次 · 海外下载 N 次」是钉钉钉盘与 GitHub 服务端记录的真实下载数，随发布同步刷新；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol></div>
 
 <footer>
   <div id="syncInfo" data-i18n="sync_loading">数据加载中…</div>
@@ -174,7 +174,7 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
 /* 静态托管要求子资源也携带 sharecode；解析期同步注入，等价于原来的 <script src> */
 (function(){
   var sc = new URLSearchParams(location.search).get("sharecode") || "";
-  document.write('<script src="releases.js?v=20261125a' + (sc ? '&sharecode=' + encodeURIComponent(sc) : '') + '"><\/script>');
+  document.write('<script src="releases.js?v=20261125b' + (sc ? '&sharecode=' + encodeURIComponent(sc) : '') + '"><\/script>');
 })();
 </script>
 <script>
@@ -210,8 +210,8 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
       status_label:"追踪记录（F 列）：", notes_unit:"条更新日志",
       more_all:"展开全部 {n} 条", more_hide:"收起",
       sync_info:"最近同步：{t} ｜ 数据源：{s} ｜ 日志匹配 {a}/{b} 条",
-      dlcount:"本机已下载 {n} 次", data_failed:"数据加载失败：",
-      tip:"<b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本；GitHub 上已有该版本的包就点亮，没有则显示灰按钮。</li><li><b>计数与搜索</b>：「本机已下载 N 次」只统计这台电脑的点击，不是公司总下载量；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol>"
+      dlstats:"钉盘下载 {d} 次 · 海外下载 {o} 次", data_failed:"数据加载失败：",
+      tip:"<b>使用说明</b><ol><li><b>版本列表</b>：仅列出钉盘中实际存在的安装包，按版本号倒序；更新日志取自《汉邦输出中心版本更新记录》E 列。</li><li><b>版本分类</b>：以 F 列「追踪记录」为准，含「已测试 / 已经测试 / 稳定版本」→ 正式版，其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。</li><li><b>三个下载入口</b>：「钉盘下载」直接唤起已登录的钉钉客户端打开这个安装包（不用网页扫码登录，首次点击浏览器会弹一次「打开钉钉」确认；exe 不能预览，打开后在它右上角点下载图标保存）；「网页下载」在浏览器打开钉盘网页版（首次需扫码）；「海外通道」从 GitHub 下载同一版本；GitHub 上已有该版本的包就点亮，没有则显示灰按钮。</li><li><b>下载统计与搜索</b>：「钉盘下载 N 次 · 海外下载 N 次」是钉钉钉盘与 GitHub 服务端记录的真实下载数，随发布同步刷新；入口链接固定不变，搜索支持版本号、文件名与日志关键词。</li></ol>"
     },
     en: {
       lang_aria:"Language", title:"Han-Bond Print System · Releases",
@@ -232,13 +232,12 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
       status_label:"Tracking (col F): ", notes_unit:"changelog entries",
       more_all:"Show all {n}", more_hide:"Collapse",
       sync_info:"Last sync: {t} | Source: {s} | Changelog matched {a}/{b}",
-      dlcount:"Downloaded {n} times on this device", data_failed:"Failed to load data: ",
-      tip:"<b>How to use</b><ol><li><b>Version list</b>: only installers actually present in DingTalk Drive, newest first; changelog comes from column E of the Han-Bond Print System upgrade log.</li><li><b>Classification</b>: column F (Tracking Record) decides — tested / stable = Stable, anything else (pending / disabled / blank / notes) = Beta.</li><li><b>Three download channels</b>: “DingTalk Drive” opens this installer straight in your signed-in DingTalk desktop client (no QR scan in the browser; the browser asks for confirmation once — an .exe cannot be previewed, so click the download icon in its own top-right corner to save); “Web Download” opens the DingTalk web page (QR sign-in on first use); “Overseas Mirror” downloads the same build from GitHub; offered per version — lit whenever that build is on GitHub.</li><li><b>Counter and search</b>: the download counter only records clicks on this device, not company-wide downloads; the entry link never changes, and search covers versions, filenames and changelog keywords.</li></ol>"
+      dlstats:"DingTalk {d} · Overseas {o} downloads", data_failed:"Failed to load data: ",
+      tip:"<b>How to use</b><ol><li><b>Version list</b>: only installers actually present in DingTalk Drive, newest first; changelog comes from column E of the Han-Bond Print System upgrade log.</li><li><b>Classification</b>: column F (Tracking Record) decides — tested / stable = Stable, anything else (pending / disabled / blank / notes) = Beta.</li><li><b>Three download channels</b>: “DingTalk Drive” opens this installer straight in your signed-in DingTalk desktop client (no QR scan in the browser; the browser asks for confirmation once — an .exe cannot be previewed, so click the download icon in its own top-right corner to save); “Web Download” opens the DingTalk web page (QR sign-in on first use); “Overseas Mirror” downloads the same build from GitHub; offered per version — lit whenever that build is on GitHub.</li><li><b>Counters and search</b>: “DingTalk N · Overseas N downloads” are real server-side counts from DingTalk Drive and GitHub, refreshed on each publish; the entry link never changes, and search covers versions, filenames and changelog keywords.</li></ol>"
     }
   };
   function t(k){var m=I18N[state.lang]||I18N.zh;return m[k]==null?(I18N.zh[k]==null?k:I18N.zh[k]):m[k]}
   function tf(k,v){var s=t(k);for(var p in v){s=s.split("{"+p+"}").join(v[p])}return s}
-  function dlText(n){return tf("dlcount",{n:n})}
   function mLabel(m){return !m?t("btn_mirror"):(state.lang==="en"?(m.label_en||t("btn_mirror")):(m.label||t("btn_mirror")))}
 
   /* 三个下载入口：钉盘下载（蓝，点开直接唤起钉钉客户端）/ 网页下载（灰白）/ 海外通道（绿，仅最新版可点） */
@@ -277,23 +276,11 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
     applyLang();
   }
 
-  /* 本机下载计数：页面收不到钉盘深链 / 浏览器下载的「完成」回执，
-     按「点击下载」动作在本机累计（口径与 CuttingCenterController 发布页一致）。
-     数据只存本机浏览器 localStorage，仅代表这台电脑点过几次，不是全公司真实下载量。 */
-  function dlKey(v){return "hboc_dl_"+v}
-  function getDl(v){try{var n=parseInt(localStorage.getItem(dlKey(v)),10);return isNaN(n)?0:n}catch(e){return 0}}
-  function incDl(v){try{var n=getDl(v)+1;localStorage.setItem(dlKey(v),String(n));return n}catch(e){return getDl(v)}}
-  function bindDl(root, key){
-    if(!root) return;
-    var span = root.querySelector(".dlcount");
-    if(!span) return;
-    /* 所有可点的下载按钮点一下 +1 */
-    var as = root.querySelectorAll("a.dl");
-    for(var i=0;i<as.length;i++){
-      as[i].addEventListener("click",function(){
-        span.textContent = dlText(incDl(key));
-      });
-    }
+  /* 真实下载数：钉盘 downloadCount + GitHub download_count，
+     由 hboc_sync.py 抓取后写进 releases.json，随发布同步刷新；不再使用本机点击计数。 */
+  function dlStats(r){
+    var s=(r&&r.stats)||{};
+    return tf("dlstats",{d:(+s.dingtalk||0),o:(+s.overseas||0)});
   }
 
   /* 英文模式优先渲染由 i18n_notes.json 合并进来的 notes_en；无译文则回退中文 */
@@ -346,11 +333,10 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
             '<div class="meta" style="margin-top:6px">'+esc(t("att_size"))+' '+esc(att.size||"—")+' ｜ '+esc(t("att_kind"))+'</div>'+
             '<div class="attach-links">'+
               dlButtons(att, mirror.attachment, true, attKey)+
-              '<span class="dlcount">'+esc(dlText(getDl(attKey)))+'</span>'+
+              '<span class="dlcount">'+esc(dlStats(att))+'</span>'+
             '</div>'+
           '</div>'+
         '</div>';
-      bindDl($("attachBox").querySelector(".attach-card"), attKey);
     }else{
       $("attachBox").innerHTML = "";
     }
@@ -385,14 +371,9 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
           '<span class="date">'+esc(r.date||"")+' · '+esc(f.size||"")+'</span></div>'+
           '<p class="fname">'+esc(f.name||r.version_raw||"")+'</p>'+ st + notesHtml(pickNotes(r),i)+
           '<div class="foot">'+links+'<span class="meta">'+esc(pickNotes(r).length)+' '+esc(t("notes_unit"))+'</span>'+
-            '<span class="dlcount">'+esc(dlText(getDl(dk)))+'</span></div>'+
+            '<span class="dlcount">'+esc(dlStats(r))+'</span></div>'+
         '</div>';
       }).join("");
-      Array.prototype.forEach.call($("list").querySelectorAll(".item[data-dli]"), function(card){
-        var j = +card.getAttribute("data-dli"), rr = items[j], ff = rr.file || {};
-        var key = rr.version || rr.version_short || ff.name || String(j);
-        bindDl(card, key);
-      });
     }
     $("list").querySelectorAll(".more").forEach(function(b){
       b.addEventListener("click",function(){
