@@ -174,7 +174,7 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
 /* 静态托管要求子资源也携带 sharecode；解析期同步注入，等价于原来的 <script src> */
 (function(){
   var sc = new URLSearchParams(location.search).get("sharecode") || "";
-  document.write('<script src="releases.js?v=20261119a' + (sc ? '&sharecode=' + encodeURIComponent(sc) : '') + '"><\/script>');
+  document.write('<script src="releases.js?v=20261125a' + (sc ? '&sharecode=' + encodeURIComponent(sc) : '') + '"><\/script>');
 })();
 </script>
 <script>
@@ -371,7 +371,8 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
         var f = r.file || {};
         var badge = r.channel==="beta" ? '<span class="badge beta">'+esc(t("badge_beta"))+'</span>'
                                        : '<span class="badge stable">'+esc(t("badge_stable"))+'</span>';
-        var st = r.status ? '<div class="status">'+esc(t("status_label"))+esc(r.status)+'</div>' : "";
+        /* 追踪记录（F列）状态条按用户要求不再展示（2026-11-25），仅保留数据用于分类与搜索 */
+        var st = "";
         var dk = r.version || r.version_short || f.name || String(i);
         /* 海外通道按版本匹配：GitHub 上存在同版本附件就点亮，没传的版本显示灰按钮 */
         var mvmap = data.mirror_versions || {};
