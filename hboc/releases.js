@@ -1,10 +1,10 @@
 window.RELEASE_DATA = {
   "schema_version": 1,
   "product": "hboc",
-  "generated_at": "2026-11-28 05:36:04",
+  "generated_at": "2026-11-28 05:46:00",
   "source": "《汉邦输出中心版本更新记录.xlsx》D/E/F 列",
   "entry_url": "https://zhangyi19861102.github.io/dingpan-file-mirror/hboc/",
-  "stats_at": "2026-11-28T05:35:58",
+  "stats_at": "2026-11-28T05:45:54",
   "mirror": {
     "package": {
       "label": "海外通道",
@@ -144,5 +144,85 @@ window.RELEASE_DATA = {
         "overseas": 3
       }
     }
-  ]
+  ],
+  "mirror_versions": {
+    "Han-Bond Print System_setup_1.0.0.1Beta2": {
+      "asset": "Han-Bond-Print-System_1.0.0.1Beta2.exe",
+      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/Han-Bond-Print-System_1.0.0.1Beta2.exe",
+      "tag": "v1.1",
+      "size": 68037508,
+      "sha256": "47092f1a0f75854dbcc3d728a6caf59b624430cb500f02fdd596617538d9d70f",
+      "version": "1.0.0.1Beta2",
+      "download_count": 3,
+      "label": "海外通道",
+      "label_en": "Overseas Mirror",
+      "note": "海外通道：从 GitHub 下载同一版本安装包，境外/网络受限时用，无需登录钉钉；按版本匹配，GitHub 上有对应版本的包即可下载。",
+      "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Offered per version — available whenever the matching build is on GitHub."
+    },
+    "1.0.0.1Beta2": {
+      "asset": "Han-Bond-Print-System_1.0.0.1Beta2.exe",
+      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/Han-Bond-Print-System_1.0.0.1Beta2.exe",
+      "tag": "v1.1",
+      "size": 68037508,
+      "sha256": "47092f1a0f75854dbcc3d728a6caf59b624430cb500f02fdd596617538d9d70f",
+      "version": "1.0.0.1Beta2",
+      "download_count": 3,
+      "label": "海外通道",
+      "label_en": "Overseas Mirror",
+      "note": "海外通道：从 GitHub 下载同一版本安装包，境外/网络受限时用，无需登录钉钉；按版本匹配，GitHub 上有对应版本的包即可下载。",
+      "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Offered per version — available whenever the matching build is on GitHub."
+    },
+    "Han-Bond Print System_setup_1.0.0.1Beta3": {
+      "asset": "Han-Bond-Print-System_1.0.0.1Beta3.exe",
+      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/Han-Bond-Print-System_1.0.0.1Beta3.exe",
+      "tag": "v1.1",
+      "size": 68155475,
+      "sha256": "c3cdbc1185e59e746f43bfe6739a6fbc0bb6ad48be88bde2ef609b0d0969a1a8",
+      "version": "1.0.0.1Beta3",
+      "download_count": 0,
+      "label": "海外通道",
+      "label_en": "Overseas Mirror",
+      "note": "海外通道：从 GitHub 下载同一版本安装包，境外/网络受限时用，无需登录钉钉；按版本匹配，GitHub 上有对应版本的包即可下载。",
+      "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Offered per version — available whenever the matching build is on GitHub."
+    },
+    "1.0.0.1Beta3": {
+      "asset": "Han-Bond-Print-System_1.0.0.1Beta3.exe",
+      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/Han-Bond-Print-System_1.0.0.1Beta3.exe",
+      "tag": "v1.1",
+      "size": 68155475,
+      "sha256": "c3cdbc1185e59e746f43bfe6739a6fbc0bb6ad48be88bde2ef609b0d0969a1a8",
+      "version": "1.0.0.1Beta3",
+      "download_count": 0,
+      "label": "海外通道",
+      "label_en": "Overseas Mirror",
+      "note": "海外通道：从 GitHub 下载同一版本安装包，境外/网络受限时用，无需登录钉钉；按版本匹配，GitHub 上有对应版本的包即可下载。",
+      "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Offered per version — available whenever the matching build is on GitHub."
+    },
+    "Han-Bond Print System_setup_1.0.0.1Beta4": {
+      "asset": "Han-Bond-Print-System_1.0.0.1Beta4.exe",
+      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/Han-Bond-Print-System_1.0.0.1Beta4.exe",
+      "tag": "v1.1",
+      "size": 68706642,
+      "sha256": "a0ae05d2649c4644ae0d63e55f1876a0ed6f1bd9eb825eb47edec871597b2eb8",
+      "version": "1.0.0.1Beta4",
+      "download_count": 0,
+      "label": "海外通道",
+      "label_en": "Overseas Mirror",
+      "note": "海外通道：从 GitHub 下载同一版本安装包，境外/网络受限时用，无需登录钉钉；按版本匹配，GitHub 上有对应版本的包即可下载。",
+      "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Offered per version — available whenever the matching build is on GitHub."
+    },
+    "1.0.0.1Beta4": {
+      "asset": "Han-Bond-Print-System_1.0.0.1Beta4.exe",
+      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/Han-Bond-Print-System_1.0.0.1Beta4.exe",
+      "tag": "v1.1",
+      "size": 68706642,
+      "sha256": "a0ae05d2649c4644ae0d63e55f1876a0ed6f1bd9eb825eb47edec871597b2eb8",
+      "version": "1.0.0.1Beta4",
+      "download_count": 0,
+      "label": "海外通道",
+      "label_en": "Overseas Mirror",
+      "note": "海外通道：从 GitHub 下载同一版本安装包，境外/网络受限时用，无需登录钉钉；按版本匹配，GitHub 上有对应版本的包即可下载。",
+      "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Offered per version — available whenever the matching build is on GitHub."
+    }
+  }
 }
