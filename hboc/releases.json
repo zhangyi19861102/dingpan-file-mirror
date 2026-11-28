@@ -53,7 +53,9 @@
       "notes": [
         "处理英文版本一下的一个bug；"
       ],
-      "notes_en": [],
+      "notes_en": [
+        "Fixed a bug in the English version."
+      ],
       "origin": "dingtalk",
       "matched_record": true,
       "file": {
