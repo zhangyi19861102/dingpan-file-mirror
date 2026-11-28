@@ -1,23 +1,23 @@
 window.RELEASE_DATA = {
   "schema_version": 1,
   "product": "hboc",
-  "generated_at": "2026-11-28 01:43:21",
+  "generated_at": "2026-11-28 05:30:58",
   "source": "《汉邦输出中心版本更新记录.xlsx》D/E/F 列",
   "entry_url": "https://zhangyi19861102.github.io/dingpan-file-mirror/hboc/",
-  "stats_at": "2026-11-28T01:43:17",
+  "stats_at": "2026-11-28T05:30:52",
   "mirror": {
     "package": {
       "label": "海外通道",
-      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/Han-Bond-Print-System_1.0.0.1Beta3.exe",
+      "url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases/download/v1.1/Han-Bond-Print-System_1.0.0.1Beta4.exe",
       "note": "海外通道：从 GitHub 下载同一版本安装包，境外/网络受限时用，无需登录钉钉；按版本匹配，GitHub 上有对应版本的包即可下载。",
       "label_en": "Overseas Mirror",
       "note_en": "Overseas mirror: downloads the same build from GitHub — use it when DingTalk is blocked or slow; no sign-in needed. Latest version only.",
       "direct": true,
       "fallback_url": "https://github.com/zhangyi19861102/dingpan-file-mirror/releases#hboc",
       "tag": "v1.1",
-      "asset": "Han-Bond-Print-System_1.0.0.1Beta3.exe",
-      "size": 68155475,
-      "sha256": "c3cdbc1185e59e746f43bfe6739a6fbc0bb6ad48be88bde2ef609b0d0969a1a8",
+      "asset": "Han-Bond-Print-System_1.0.0.1Beta4.exe",
+      "size": 68706642,
+      "sha256": "a0ae05d2649c4644ae0d63e55f1876a0ed6f1bd9eb825eb47edec871597b2eb8",
       "note_en_page": "Overseas mirror: opens the GitHub download page and jumps to the matching file, where you click the filename to download. No DingTalk sign-in needed."
     }
   },
@@ -33,14 +33,45 @@ window.RELEASE_DATA = {
     "note": "钉钉 → 工作台 / 钉盘 → 团队文件 → 全员文件夹 → 研发部 → 发布软件 → 汉邦输出中心 发布版本",
     "record_name": "汉邦输出中心版本更新记录.xlsx",
     "channel_rule": "以《汉邦输出中心版本更新记录》F 列『追踪记录』判定：含『已测试 / 已经测试 / 稳定版本』→ 正式版；其余（待测试 / 禁用 / 空 / 说明）→ Beta 版。D 列为软件版本号，E 列为当前版本更新日志。",
-    "file_count": 3,
-    "package_count": 2,
-    "record_matched": 2,
-    "last_sync": "2026-11-25T18:10:52",
+    "file_count": 4,
+    "package_count": 3,
+    "record_matched": 3,
+    "last_sync": "2026-11-28T05:30:52",
     "note_en": "DingTalk → Workbench / Drive → Team Files → All Staff → R&D → Released Software → Han-Bond Print System"
   },
   "attachment": null,
   "releases": [
+    {
+      "id": "hboc-han-bondprintsystem_setup_1.0.0.1beta4",
+      "version": "Han-Bond Print System_setup_1.0.0.1Beta4",
+      "version_short": "1.0.0.1Beta4",
+      "version_raw": "Han-Bond Print System_setup_1.0.0.1Beta4.exe",
+      "date": "2026-11-28",
+      "channel": "beta",
+      "beta": true,
+      "status": "待测试",
+      "notes": [
+        "处理英文版本一下的一个bug；"
+      ],
+      "notes_en": [],
+      "origin": "dingtalk",
+      "matched_record": true,
+      "file": {
+        "name": "Han-Bond Print System_setup_1.0.0.1Beta4.exe",
+        "size": "65.5 MB",
+        "dl_url": "dingtalk://dingtalkclient/page/yunpan?route=previewDentry&spaceId=797027777&fileId=244887863533&type=file",
+        "web_url": "https://alidocs.dingtalk.com/i/nodes/ZgpG2NdyVXzBZLmXS57pq3Y48MwvDqPk",
+        "node_id": "ZgpG2NdyVXzBZLmXS57pq3Y48MwvDqPk",
+        "dentry_id": "244887863533",
+        "url_kind": "dingtalk",
+        "matched": true,
+        "missing": false
+      },
+      "stats": {
+        "dingtalk": 0,
+        "overseas": 0
+      }
+    },
     {
       "id": "hboc-han-bondprintsystem_setup_1.0.0.1beta3",
       "version": "Han-Bond Print System_setup_1.0.0.1Beta3",
