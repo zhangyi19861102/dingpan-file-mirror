@@ -174,7 +174,7 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
 /* 静态托管要求子资源也携带 sharecode；解析期同步注入，等价于原来的 <script src> */
 (function(){
   var sc = new URLSearchParams(location.search).get("sharecode") || "";
-  document.write('<script src="releases.js?v=202611280143' + (sc ? '&sharecode=' + encodeURIComponent(sc) : '') + '"><\/script>');
+  document.write('<script src="releases.js?v=202611280530' + (sc ? '&sharecode=' + encodeURIComponent(sc) : '') + '"><\/script>');
 })();
 </script>
 <script>
@@ -410,7 +410,7 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:22px;line-h
   if(window.RELEASE_DATA){ init(window.RELEASE_DATA); }
   else{
     var sc = new URLSearchParams(location.search).get("sharecode") || "";
-    fetch("releases.json?v=202611280143" + (sc ? "&sharecode=" + encodeURIComponent(sc) : ""))
+    fetch("releases.json?v=202611280530" + (sc ? "&sharecode=" + encodeURIComponent(sc) : ""))
       .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})
       .then(init).catch(function(e){fail(e.message)});
   }
