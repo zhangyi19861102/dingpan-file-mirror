@@ -1,10 +1,10 @@
 window.RELEASE_DATA = {
   "schema_version": 1,
   "product": "hboc",
-  "generated_at": "2026-11-28 13:46:56",
+  "generated_at": "2026-11-28 19:49:33",
   "source": "《汉邦输出中心版本更新记录.xlsx》D/E/F 列",
   "entry_url": "https://zhangyi19861102.github.io/dingpan-file-mirror/hboc/",
-  "stats_at": "2026-11-28T13:46:50",
+  "stats_at": "2026-11-28T19:49:23",
   "mirror": {
     "package": {
       "label": "海外通道",
